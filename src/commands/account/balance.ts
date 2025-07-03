@@ -48,11 +48,11 @@ export class Balance extends SwankyCommand<typeof Balance> {
       frozen = miscFrozen;
     }
 
-    const transferrableBalance = free.sub(frozen);
+    const transferableBalance = free.sub(frozen);
     const totalBalance = free.add(reserved);
 
-    console.log("Transferrable Balance:", formatBalance(transferrableBalance));
-    if (!transferrableBalance.eq(totalBalance)) {
+    console.log("Transferable Balance:", formatBalance(transferableBalance));
+    if (!transferableBalance.eq(totalBalance)) {
       console.log("Total Balance:", formatBalance(totalBalance));
       console.log("Raw Balances:", balance.toHuman());
     }
